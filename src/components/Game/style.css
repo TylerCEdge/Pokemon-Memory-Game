@@ -1,8 +1,4 @@
 .wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: aqua;
     height: 500px !important;
     color: white;

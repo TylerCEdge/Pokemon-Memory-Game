@@ -5,9 +5,17 @@ class Header extends Component {
   render() {
     return (
       <header className="test">
-        <p className="brand">Game Title</p>
-        <p className="message">Game Message</p>
-        <p className="score">Score</p>
+        <div className="row">
+          <div className="col-sm 4">
+            <p>Game Title</p>
+          </div>
+          <div className="col-sm-4 text-center">
+            <p>Message</p>
+          </div>
+          <div className="col-sm-4 text-right">
+            <p>Score: </p>
+          </div>
+        </div>
       </header>
     );
   }
