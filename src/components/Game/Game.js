@@ -1,9 +1,8 @@
 import React from "react";
 import "./style.css"
 
-const Game = () =>
-    <div className="wrapper">
-        <h3>Game Content</h3>
-    </div>
+function Game(props) {
+    return <div className="wrapper">{props.children}</div>
+}
 
 export default Game;

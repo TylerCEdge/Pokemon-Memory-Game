@@ -1,4 +1,4 @@
-.flex-container {
-    display: flex;
-    flex-flow: column;
+.container-fluid {
+    align-content: center;
+    text-align: center;
 }
