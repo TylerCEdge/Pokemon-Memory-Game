@@ -4,23 +4,33 @@ import Header from './components/header'
 import Card from './components/card'
 import cards from './cards.json'
 
-function shuffle (arr) {
-	for (let i = arr.length - 1; i > 0; i--) {
-		let j = Math.floor(Math.random() * (i + 1));
-		[arr[i], arr[j]] = [arr[j], arr[i]];
-	}
-	return arr;
-}
+const shuffle = arr => arr
+	.map(a => [Math.random(), a])
+	.sort((a, b) => a[0] - b[0])
+	.map(a => a[1])
+
+// function shuffle (arr) {
+// 	for (let i = arr.length - 1; i > 0; i--) {
+// 		let j = Math.floor(Math.random() * (i + 1));
+// 		[arr[i], arr[j]] = [arr[j], arr[i]];
+// 	}
+// 	return arr;
+// }
+//Console log confirmed cards are being randomized
 console.log(shuffle(cards))
 
 class App extends Component {
-
-	state = {
-		cards,
-		score: 0,
-		hiscore: 0
-			
+	constructor(props) {
+		super(props)
+		
+		this.state = {
+			cards: shuffle(cards),
+			score: 0,
+			hiscore: 0
+				
+		}
 	}
+	
 
 
 	
