@@ -1,12 +1,12 @@
 .card {
-  display: flex;
   height: 300px;
   width: 250px;
   margin: 3px;
   justify-content: center;
   align-content: center;
   overflow: hidden;
-  background: black;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid gray;
 }
 
 .card > img {

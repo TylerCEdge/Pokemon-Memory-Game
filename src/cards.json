@@ -5,54 +5,46 @@
 	},
 	{
 		"id": 2,
-		"image": "/img/aot1.png"
-	},
-	{
-		"id": 3,
-		"image": "/img/aot2.png"
-	},
-	{
-		"id": 4,
 		"image": "/img/arbok.png"
 	},
 	{
-		"id": 5,
+		"id": 3,
 		"image": "/img/blueflying.png"
 	},
 	{
-		"id": 6,
+		"id": 4,
 		"image": "/img/blueguy.png"
 	},
 	{
-		"id": 7,
+		"id": 5,
 		"image": "/img/bowser.png"
 	},
 	{
-		"id": 8,
+		"id": 6,
 		"image": "/img/greyguy.png"
 	},
 	{
-		"id": 9,
+		"id": 7,
 		"image": "/img/greysomething.png"
 	},
 	{
-		"id": 10,
+		"id": 8,
 		"image": "/img/mario.png"
 	},
 	{
-		"id": 11,
+		"id": 9,
 		"image": "/img/naruto.png"
 	},
 	{
-		"id": 12,
+		"id": 10,
 		"image": "/img/peach.png"
 	},
 	{
-		"id": 13,
+		"id": 11,
 		"image": "/img/pikachu.png"
 	},
 	{
-		"id": 14,
+		"id": 12,
 		"image": "/img/yellow.png"
 	}
 ]
