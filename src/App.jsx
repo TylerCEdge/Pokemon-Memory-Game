@@ -1,89 +1,66 @@
-import React, { useState, useEffect } from 'react'
-import Board from './components/board'
-import Nav from './components/nav'
+import React, { Component } from 'react'
+import Wrapper from './components/wrapper'
+import Header from './components/header'
+import Card from './components/card'
+import cards from './cards.json'
 
-import initializeDeck from './deck'
+class App extends Component {
+	// Setting state
+	state = {
+		cards,
+		score: 0,
+		hiscore: 0,
+	}
 
-export default function App() {
-  const [cards, setCards] = useState([])
-  const [flipped, setFlipped] = useState([])
-  const [solved, setSolved] = useState([])
-  const [dimension, setDimension] = useState(400)
-  const [disabled, setDisabled] = useState(false)
+	// If game is over
+	gameOver = () => {
+		if (this.state.score > this.state.hiscore) {
+			this.setState({ hiscore: this.state.score }, function() {
+				console.log(this.state.hiscore)
+			})
+		}
+		this.state.cards.forEach(card => {
+			card.count = 0
+		})
+		alert(`Game Over :( \nscore: ${this.state.score}`)
+		this.setState({ score: 0 })
+		return true
+	}
 
-  useEffect(() => {
-    resizeBoard()
-    setCards(initializeDeck())
-  }, [])
+	clickCount = id => {
+		this.state.cards.find((o, i) => {
+			if (o.id === id) {
+				if (cards[i].count === 0) {
+					cards[i].count = cards[i].count + 1
+					this.setState({ score: this.state.score + 1 }, function() {
+						console.log(this.state.score)
+					})
+					this.state.cards.sort(() => Math.random() - 0.5)
+					return true
+				} else {
+					this.gameOver()
+				}
+			}
+		})
+	}
 
-
-  useEffect(() => {
-    preloadImages()
-  }, cards)
-
-  useEffect(() => {
-    const resizeListener = window.addEventListener('resize', resizeBoard)
-
-    return () => window.removeEventListener('resize', resizeListener)
-  })
-
-  const preloadImages = () =>
-    cards.map((card) => {
-      const src = `/img/${card.type}.png`
-      new Image().src = src
-    })
-
-  const resizeBoard = () => {
-    setDimension(
-      Math.min(
-        document.documentElement.clientWidth,
-        document.documentElement.clientHeight,
-      ),
-    )
-  }
-
-  const sameCardClickedTwice = (id) => flipped.includes(id)
-
-  const isAMatch = (id) => {
-    const clickedCard = cards.find((card) => card.id === id)
-    const flippedCard = cards.find((card) => flipped[0] === card.id)
-    return flippedCard.type === clickedCard.type
-  }
-
-  const resetCards = () => {
-    setFlipped([])
-    setDisabled(false)
-  }
-
-  const handleClick = (id) => {
-    setDisabled(true)
-    if (flipped.length === 0) {
-      setFlipped((flipped) => [...flipped, id])
-      setDisabled(false)
-    } else {
-      if (sameCardClickedTwice(flipped, id)) return
-      setFlipped((flipped) => [...flipped, id])
-      if (isAMatch(id)) {
-        setSolved([...solved, ...flipped, id])
-        resetCards()
-      } else {
-        setTimeout(resetCards, 2000)
-      }
-    }
-  }
-
-  return (
-    <div>
-      <Nav />
-
-      <Board
-        cards={cards}
-        flipped={flipped}
-        solved={solved}
-        dimension={dimension}
-        handleClick={handleClick}
-        disabled={disabled}
-      />
-    </div>
-  )
+	render() {
+		return (
+			<Wrapper>
+				<Header score={this.state.score} hiscore={this.state.hiscore}>
+					Clicky Game
+				</Header>
+				{this.state.cards.map(card => (
+					<Card
+						clickCount={this.clickCount}
+						id={card.id}
+						key={card.id}
+						image={card.image}
+					/>
+				))}
+			</Wrapper>
+		)
+	}
 }
+
+export default App

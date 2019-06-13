@@ -1,34 +1,22 @@
-.flip-container {
-  perspective: 1000px;
-  display: inline-block;
-  border: 1px solid white;
-  background: black;
-}
-
-.flip-container.flipped .flipper {
-  transform: rotateY(180deg);
-}
-
-.flipper {
-  transition: 0.6s;
-  transform-style: preserve-3d;
+.card {
+  border-radius: 2px;
+  height: 250px;
+  margin: 1rem;
   position: relative;
+  width: 325px;
 }
 
-.front,
-.back {
-  backface-visibility: hidden;
-  position: absolute;
-  left: 0;
-  top: 0;
+.card > .img-container {
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.card > .img-container > img {
+  width: 60%
 }
 
-.back {
-  z-index: 2;
-  /* for firefox 31 */
-  transform: rotateY(0deg);
-}
-
-.front {
-  transform: rotateY(180deg);
+.card > .content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 15px;
 }
