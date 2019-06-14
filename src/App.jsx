@@ -45,7 +45,7 @@ class App extends Component {
 	// }
 
 	handleGuess = () => {
-		const newScore = this.state.score + 1
+		let newScore = this.state.score + 1
 		this.setState({
 			score: newScore,
 		})
@@ -66,9 +66,8 @@ class App extends Component {
 			let win = 'You Win'
 			this.setState({
 				score: 0,
-				hiscore: 12,
 				message: 'You Win',
-				clicked: [],
+				clicked: []
 			})
 			console.log(win)
 			this.handleShuffle()
@@ -76,9 +75,8 @@ class App extends Component {
 			let lose = 'You Lose'
 			this.setState({
 				score: 0,
-				hiscore: this.state.hiscore,
 				message: lose,
-				clicked: [],
+				clicked: []
 			})
 			console.log(lose)
 			this.handleShuffle()
