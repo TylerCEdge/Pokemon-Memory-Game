@@ -10,9 +10,6 @@
 }
 
 .card > img {
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%;
-  background: center;
-  background-size: cover;
+  background: center center;
+  background-size: contain !important;
 }
