@@ -29,42 +29,48 @@ class App extends Component {
 			cards,
 			score: 0,
 			hiscore: 0,
-			rightWrong: '',
+			message: '',
 			clicked: [],
 		}
-	}
-
-	handleClick = id => {
-		if (this.state.clicked.indexOf(id) === -1) {
-			this.handleIncrement()
-			this.setState({ clicked: this.state.clicked.concat(id) })
-		} else {
-			this.handleReset()
-		}
-	}
-
-	handleIncrement = () => {
-		const newScore = this.state.score + 1
-		this.setState({
-			score: newScore,
-			rightWrong: '',
-		})
-		if (newScore >= this.state.hiscore) {
-			this.setState({ hiscore: newScore })
-		} else if (newScore === 12) {
-			this.setState({ rightWrong: 'You win!' })
-		}
-		this.handleShuffle()
 	}
 
 	handleReset = () => {
 		this.setState({
 			score: 0,
 			hiscore: this.state.hiscore,
-			rightWrong: 'Opps! Try Again!',
+			message: '',
 			clicked: [],
 		})
 		this.handleShuffle()
+	}
+
+	handleGuess = () => {
+		const newScore = this.state.score + 1
+		this.setState({
+			score: newScore,
+		})
+
+		if (newScore >= this.state.hiscore) {
+			this.setState({
+				hiscore: newScore,
+				message: '',
+			})
+		} else if (newScore === 12) {
+			this.setState({
+				message: 'You Win',
+			})
+			this.handleReset()
+		}
+		this.handleShuffle()
+	}
+
+	handleClick = id => {
+		if (this.state.clicked.indexOf(id) === -1) {
+			this.handleGuess()
+			this.setState({ clicked: this.state.clicked.concat(id) })
+		} else {
+			this.handleReset()
+		}
 	}
 
 	handleShuffle = () => {
@@ -86,8 +92,8 @@ class App extends Component {
 								key={card.id}
 								image={card.image}
 								handleClick={this.handleClick}
-								handleIncrement={this.handleIncrement}
-								handleReset={this.handleReset}
+								handleGuess={this.handleGuess}
+								handleReset={this.handlehandleReset}
 								handleShuffle={this.handleShuffle}
 							/>
 						))}
