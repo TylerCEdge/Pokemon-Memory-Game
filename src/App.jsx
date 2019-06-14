@@ -19,7 +19,7 @@ const shuffle = arr =>
 // 	return arr;
 // }
 //Console log confirmed cards are being randomized
-console.log(shuffle(cards))
+// console.log(shuffle(cards))
 
 class App extends Component {
 	constructor(props) {
@@ -34,15 +34,15 @@ class App extends Component {
 		}
 	}
 
-	handleReset = () => {
-		this.setState({
-			score: 0,
-			hiscore: this.state.hiscore,
-			message: '',
-			clicked: [],
-		})
-		this.handleShuffle()
-	}
+	// handleReset = () => {
+	// 	this.setState({
+	// 		score: 0,
+	// 		hiscore: this.state.hiscore,
+	// 		message: '',
+	// 		clicked: [],
+	// 	})
+	// 	this.handleShuffle()
+	// }
 
 	handleGuess = () => {
 		const newScore = this.state.score + 1
@@ -53,23 +53,45 @@ class App extends Component {
 		if (newScore >= this.state.hiscore) {
 			this.setState({
 				hiscore: newScore,
-				message: '',
 			})
 		} else if (newScore === 12) {
+			let win = 'You Win'
 			this.setState({
+				score: 0,
+				hiscore: 12,
 				message: 'You Win',
+				clicked: [],
 			})
-			this.handleReset()
+			console.log(win)
+			this.handleShuffle()
 		}
 		this.handleShuffle()
 	}
 
 	handleClick = id => {
 		if (this.state.clicked.indexOf(id) === -1) {
-			this.handleGuess()
 			this.setState({ clicked: this.state.clicked.concat(id) })
+			this.handleGuess()
+		} else if (this.state.clicked.length === 12) {
+			let win = 'You Win'
+			this.setState({
+				score: 0,
+				hiscore: 12,
+				message: 'You Win',
+				clicked: [],
+			})
+			console.log(win)
+			this.handleShuffle()
 		} else {
-			this.handleReset()
+			let lose = 'You Lose'
+			this.setState({
+				score: 0,
+				hiscore: this.state.hiscore,
+				message: lose,
+				clicked: [],
+			})
+			console.log(lose)
+			this.handleShuffle()
 		}
 	}
 
@@ -93,7 +115,6 @@ class App extends Component {
 								image={card.image}
 								handleClick={this.handleClick}
 								handleGuess={this.handleGuess}
-								handleReset={this.handlehandleReset}
 								handleShuffle={this.handleShuffle}
 							/>
 						))}
