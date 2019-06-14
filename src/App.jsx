@@ -54,16 +54,6 @@ class App extends Component {
 			this.setState({
 				hiscore: newScore,
 			})
-		} else if (newScore === 12) {
-			let win = 'You Win'
-			this.setState({
-				score: 0,
-				hiscore: 12,
-				message: 'You Win',
-				clicked: [],
-			})
-			console.log(win)
-			this.handleShuffle()
 		}
 		this.handleShuffle()
 	}
