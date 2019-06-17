@@ -34,10 +34,13 @@ class App extends Component {
 		}
 	}
 
+	componentDidMount() {
+		alert('Directions: Click each image once to win! Good Luck!')
+	}
+
 	componentDidUpdate(){
 		if(this.state.clicked.length == 12){
-		  console.log("You win")
-		  window.alert("You win")
+		  alert('You Win')
 		  this.handleReset()
 		}
 	  }
@@ -82,7 +85,7 @@ class App extends Component {
 			this.setState({
 				message: lose
 			})
-			console.log(lose)
+			alert('You Lose!')
 			this.handleReset()
 		}
 	}
