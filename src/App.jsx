@@ -78,7 +78,6 @@ class App extends Component {
 			this.setState({
 				message: win
 			})
-			console.log(win)
 			this.handleReset()
 		} else {
 			let lose = 'You Lose'
