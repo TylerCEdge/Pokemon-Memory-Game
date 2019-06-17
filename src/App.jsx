@@ -24,7 +24,7 @@ const shuffle = arr =>
 class App extends Component {
 	constructor(props) {
 		super(props)
-
+	
 		this.state = {
 			cards,
 			score: 0,
@@ -34,22 +34,30 @@ class App extends Component {
 		}
 	}
 
-	// handleReset = () => {
-	// 	this.setState({
-	// 		score: 0,
-	// 		hiscore: this.state.hiscore,
-	// 		message: '',
-	// 		clicked: [],
-	// 	})
-	// 	this.handleShuffle()
-	// }
-
+	componentDidUpdate(){
+		if(this.state.clicked.length == 12){
+		  console.log("You win")
+		  window.alert("You win")
+		  this.handleReset()
+		}
+	  }
+	
+	handleReset = () => {
+		this.setState({
+			score: 0,
+			hiscore: this.state.hiscore,
+			message: '',
+			clicked: [],
+		})
+		this.handleShuffle()
+	}
+	
 	handleGuess = () => {
 		let newScore = this.state.score + 1
 		this.setState({
 			score: newScore,
 		})
-
+	
 		if (newScore >= this.state.hiscore) {
 			this.setState({
 				hiscore: newScore,
@@ -57,7 +65,7 @@ class App extends Component {
 		}
 		this.handleShuffle()
 	}
-
+	
 	handleClick = id => {
 		if (this.state.clicked.indexOf(id) === -1) {
 			this.setState({ clicked: this.state.clicked.concat(id) })
@@ -65,21 +73,17 @@ class App extends Component {
 		} else if (this.state.clicked.length === 12) {
 			let win = 'You Win'
 			this.setState({
-				score: 0,
-				message: 'You Win',
-				clicked: []
+				message: win
 			})
 			console.log(win)
-			this.handleShuffle()
+			this.handleReset()
 		} else {
 			let lose = 'You Lose'
 			this.setState({
-				score: 0,
-				message: lose,
-				clicked: []
+				message: lose
 			})
 			console.log(lose)
-			this.handleShuffle()
+			this.handleReset()
 		}
 	}
 
