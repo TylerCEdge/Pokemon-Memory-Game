@@ -2,7 +2,7 @@
   "name": "clicky-game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://TylerCEdge.github.io/clicky-game",
+  "homepage": "https://TylerCEdge.github.io/clicky-game",
   "dependencies": {
     "@material-ui/core": "^4.1.0",
     "contentful": "^7.7.0",
