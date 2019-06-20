@@ -39,7 +39,7 @@ class App extends Component {
 	}
 
 	componentDidUpdate(){
-		if(this.state.clicked.length == 12){
+		if(this.state.clicked.length === 12){
 		  alert('You Win')
 		  this.handleReset()
 		}
