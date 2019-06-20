@@ -2,73 +2,73 @@
 	{
 		"id": 1,
 		"name" : "Angry Pikachu",
-		"image": "/img/angrypikachu.png",
+		"image": "angrypikachu.png",
 		"clicked": false
 	},
 	{
 		"id": 2,
 		"name": "Arbok",
-		"image": "/img/arbok.png",
+		"image": "arbok.png",
 		"clicked": false
 	},
 	{
 		"id": 3,
 		"name": "BlueFlying",
-		"image": "/img/blueflying.png",
+		"image": "blueflying.png",
 		"clicked": false
 	},
 	{
 		"id": 4,
 		"name": "BlueGuy",
-		"image": "/img/blueguy.png",
+		"image": "blueguy.png",
 		"clicked": false
 	},
 	{
 		"id": 5,
 		"name": "Bowser",
-		"image": "/img/bowser.png",
+		"image": "bowser.png",
 		"clicked": false
 	},
 	{
 		"id": 6,
 		"name": "GreyGuy",
-		"image": "/img/greyguy.png",
+		"image": "greyguy.png",
 		"clicked": false
 	},
 	{
 		"id": 7,
 		"name": "GreySomething",
-		"image": "/img/greysomething.png",
+		"image": "greysomething.png",
 		"clicked": false
 	},
 	{
 		"id": 8,
 		"name": "Mario",
-		"image": "/img/mario.png",
+		"image": "mario.png",
 		"clicked": false
 	},
 	{
 		"id": 9,
 		"name": "Naruto",
-		"image": "/img/naruto.png",
+		"image": "naruto.png",
 		"clicked": false
 	},
 	{
 		"id": 10,
 		"name": "Peach",
-		"image": "/img/peach.png",
+		"image": "peach.png",
 		"clicked": false
 	},
 	{
 		"id": 11,
 		"name": "Pikachu",
-		"image": "/img/pikachu.png",
+		"image": "pikachu.png",
 		"clicked": false
 	},
 	{
 		"id": 12,
 		"name": "Yellow",
-		"image": "/img/yellow.png",
+		"image": "yellow.png",
 		"clicked": false
 	}
 ]
