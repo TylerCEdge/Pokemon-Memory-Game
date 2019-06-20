@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/clicky-game/static/css/main.2e1137c8.chunk.css",
+    "main.js": "/clicky-game/static/js/main.8b784a6d.chunk.js",
+    "main.js.map": "/clicky-game/static/js/main.8b784a6d.chunk.js.map",
+    "runtime~main.js": "/clicky-game/static/js/runtime~main.27874bd3.js",
+    "runtime~main.js.map": "/clicky-game/static/js/runtime~main.27874bd3.js.map",
+    "static/js/2.884c28c3.chunk.js": "/clicky-game/static/js/2.884c28c3.chunk.js",
+    "static/js/2.884c28c3.chunk.js.map": "/clicky-game/static/js/2.884c28c3.chunk.js.map",
+    "index.html": "/clicky-game/index.html",
+    "precache-manifest.fb0cfc0cde078094de3b88d3aa5fecc8.js": "/clicky-game/precache-manifest.fb0cfc0cde078094de3b88d3aa5fecc8.js",
+    "service-worker.js": "/clicky-game/service-worker.js",
+    "static/css/main.2e1137c8.chunk.css.map": "/clicky-game/static/css/main.2e1137c8.chunk.css.map",
+    "static/media/angrypikachu.png": "/clicky-game/static/media/angrypikachu.89727a06.png",
+    "static/media/arbok.png": "/clicky-game/static/media/arbok.b1350b4a.png",
+    "static/media/background.jpg": "/clicky-game/static/media/background.283350ba.jpg",
+    "static/media/blueflying.png": "/clicky-game/static/media/blueflying.6d37ba9a.png",
+    "static/media/blueguy.png": "/clicky-game/static/media/blueguy.b11c75b7.png",
+    "static/media/bowser.png": "/clicky-game/static/media/bowser.e4a98ddc.png",
+    "static/media/greyguy.png": "/clicky-game/static/media/greyguy.1772f9f8.png",
+    "static/media/greysomething.png": "/clicky-game/static/media/greysomething.703836e8.png",
+    "static/media/mario.png": "/clicky-game/static/media/mario.37702ed0.png",
+    "static/media/naruto.png": "/clicky-game/static/media/naruto.1ea36257.png",
+    "static/media/peach.png": "/clicky-game/static/media/peach.f45ffc8a.png",
+    "static/media/pikachu.png": "/clicky-game/static/media/pikachu.c7469c87.png",
+    "static/media/yellow.png": "/clicky-game/static/media/yellow.70dad4ce.png"
+  }
+}
