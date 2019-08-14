@@ -9,6 +9,8 @@ Pokemon Memory Game is a Heroku hosted memory game.  It utilizes React.js to ren
 
 ![](clickygame.png)
 
+Link to deployed project https://pokemon-memory-app.herokuapp.com/#/
+
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/datadog-metrics
