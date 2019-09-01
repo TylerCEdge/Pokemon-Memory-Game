@@ -5,12 +5,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: url('img/background.jpg');
-  overflow: hidden;
-  color: #e7e7e7;
-  margin: 0 auto;
-  padding: 1em 2em;
-  color: white;
-  font-family: 'FiraCode-retina';
+  background: url('images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 }
