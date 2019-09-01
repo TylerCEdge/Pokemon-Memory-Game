@@ -1,0 +1,5 @@
+.test {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: (4, 1fr);
+}
